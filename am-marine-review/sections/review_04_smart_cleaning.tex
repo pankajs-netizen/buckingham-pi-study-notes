@@ -1,0 +1,45 @@
+\section{Smart and Active Biofouling-Control Strategies}
+\subsection{Photocatalysis and UV}
+Photocatalytic TiO$_2$ and hybrid surfaces use light-driven chemistry to alter deposits or inhibit organisms. UV studies show that exposure schedule matters: continuous exposure can prevent settlement but may damage a copper coating, while intermittent exposure can work differently across coating and fouling types \cite{hunsucker_using_2019}. The practical questions are energy supply, optical access, shadowing, surface ageing, crew and ecological safety, and performance during non-ideal illumination.
+
+\subsection{Encapsulation and controlled chemistry}
+Encapsulation creates a low-oxygen or chemically altered environment to eliminate fouling on removable or treatable structures. Laboratory and field observations show that temperature, biomass, community age, treatment duration, and acetic acid alter mortality rates \cite{atalah_its_2016}. This is a management intervention rather than a universal hull coating and must include containment and disposal controls.
+
+\subsection{Laser-assisted removal}
+Laser--biofouling interaction studies indicate a route to selective energy delivery, but absorption by coating and fouling, thermal damage, standoff, water optics, and safety govern feasibility \cite{zimbelmann_interaction_2022}. Laser cleaning should be treated as an active maintenance technology requiring coating-compatibility and waste assessment, not as inherently low impact.
+
+\section{In-Water Cleaning and Integrated Hull-Fouling Management}
+\subsection{Mechanical grooming and water jets}
+Frequent gentle grooming can suppress heavy biofilm and macrofouling while reducing drag, but low-frequency grooming may leave tenacious biofilm or permit macrofouler recruitment \cite{hearin_analysis_2016}. Calibrated waterjet studies show that cleaning forces can be selected to remove early fouling while avoiding apparent coating damage under reported conditions \cite{oliveira_ship_2020}.
+
+\subsection{Robotic, ultrasonic, and niche-area methods}
+Ultrasonically activated water streams, autonomous manipulators, and niche-area robots address access and force-control problems \cite{salta_bubbles_2016,park_development_2023}. Their engineering value lies in repeatability and targeted maintenance, but navigation, energy, inspection, recovery of waste, and compatibility with coating topography remain open issues.
+
+Automated LoF assessment can use dense semantic segmentation of underwater hull imagery, including convolutional or transformer-based vision models. A recent external benchmark evaluates automated marine biofouling assessment on an LoF scale, but it is supplementary literature rather than one of the 81 evaluated studies \cite{arxiv2601lof}. AUV/ROV inspection and hydraulic niche-area cleaning are supported by the available robot studies; the evidence base does not establish a universal fraction of fouling concentrated in niches, so that percentage is NR rather than imported.
+
+\subsection{Automated level-of-fouling monitoring and robotic inspection}
+Condition-based cleaning requires an observation layer between the hull and the scheduling decision. A practical pipeline is: georeferenced underwater imagery and vehicle pose; illumination, turbidity, and scale correction; semantic or instance segmentation of coating, slime, macrofouling, damage, and exposed substrate; conversion to a level-of-fouling (LoF) class or continuous coverage/thickness estimate; and fusion with roughness, speed--power, cleaning history, and release observations. The available corpus supports the need for underwater inspection grids and robotic niche-area access, as well as the mechanical and environmental constraints of cleaning robots \cite{hearin_analysis_2016,madanipour_modal_2023,park_development_2023}. It does not, however, contain a validated automated LoF classifier with a reported confusion matrix or calibrated ship-scale drag error. Recent computer-vision LoF systems should therefore be treated as candidate monitoring tools until their labels, domain shift, and uncertainty are independently validated.
+
+The LoF label should be operational rather than purely visual. A useful schema records at least coverage class, fouling type, spatial location, confidence, and whether the observation is before or after cleaning. Labels should be tied to a reference grid and include an ``unknown'' state for glare, turbidity, occlusion, motion blur, or insufficient scale. For probability bins $B_m$, Expected Calibration Error should be reported as
+\begin{equation}
+\mathrm{ECE}=\sum_m\frac{|B_m|}{n}\left|\mathrm{acc}(B_m)-\mathrm{conf}(B_m)\right|,
+\end{equation}
+alongside precision, recall, intersection-over-union, calibration error, and spatial coverage. Underwater turbidity, optical backscatter, attenuation, camouflage, and changing camera geometry can produce overconfident errors, such as confusing harmless macroalgae with tubeworms or the reverse. A high image classification score does not establish that the system can estimate the resistance consequence of fouling.
+
+\subsection{Propagation of sensing uncertainty into maintenance scheduling}
+Let $L$ denote the latent LoF state and $y$ the inspection data. The monitoring system should provide a calibrated posterior $p(L\mid y)$ rather than a single deterministic class. A cleaning decision $a$ is then selected by expected cost,
+\begin{equation}
+a^* = \arg\min_a \sum_L p(L\mid y) C(a,L),
+\end{equation}
+where $C(a,L)$ includes cleaning, off-hire, coating-wear, containment, environmental, and delay costs. The ``wait'' action must include the expected hydrodynamic penalty and the probability of progression to a more difficult fouling state; the ``clean'' action must include damage and release risk even when the classifier predicts high fouling. In particular, $P(\mathrm{LoF}\geq3\mid\mathrm{image})$ should feed the decision rule rather than a hard class label:
+\begin{equation}
+\text{Trigger cleaning if }\mathbb{E}[C_{\mathrm{fuel}}(\mathrm{drag})\mid y] > C_{\mathrm{clean}}+\mathbb{E}[C_{\mathrm{damage}}(\mathrm{brush})\mid y].
+\end{equation}
+The expectations should be conditioned on the calibrated posterior and include false-positive cleaning, false-negative delay, coating wear, containment, and off-hire consequences.
+
+Uncertainty propagates through at least four links: misclassification changes the estimated fouled area; localization error changes the area exposed to cleaning; coverage uncertainty changes the inferred roughness or drag penalty; and temporal uncertainty changes the predicted growth before the next intervention. A transparent implementation samples the posterior class, spatial coverage, roughness-to-resistance model, weather correction, and cleaning-effectiveness distribution, then reports a distribution of net benefit rather than one trigger date. Cleaning can be triggered when the probability-weighted cost of waiting exceeds the cost of intervention, or when the probability of exceeding an asset-specific fouling threshold crosses a predeclared limit. A value-of-information test can justify an additional inspection when reducing sensing uncertainty is expected to change the action or avoid a costly false positive.
+
+The recommended validation loop is therefore closed: classify and quantify fouling; propagate uncertainty to predicted speed loss or power increase using the ISO 19030/ITTC framework; inspect after cleaning; update the classifier and coating state; and compare predicted versus observed performance. This prevents an automated LoF map from becoming an uncalibrated proxy for fuel savings and makes inspection quality part of the maintenance evidence chain.
+
+\subsection{Cleaning as a source term}
+Cleaning can transfer organisms, paint particles, metals, polymers, and biofilm material into receiving water. Hydroblasting studies and wastewater risk assessments therefore make containment and treatment part of the control system \cite{kim_qualitative_2024,soon_characterization_2021}. The integrated chain is coating choice $\rightarrow$ service life $\rightarrow$ cleaning frequency $\rightarrow$ wear and release $\rightarrow$ environmental burden.
