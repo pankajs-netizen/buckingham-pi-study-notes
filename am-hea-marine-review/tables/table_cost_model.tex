@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Indicative first-cost model for a representative seawater pump impeller ($\sim$8~kg net mass) in 2026 USD. Entries marked [E] are anchored to published market data; entries marked [P] are estimates/assumptions of this work. Machine-hour rates and HEA feedstock prices dominate all scenarios; figures are order-of-magnitude, not quotations.}
+\label{tab:costmodel}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}lXXXX@{}}
+\toprule
+Option & Feedstock [E/P] & Process time and rate [E/P] & Post-processing [P] & Indicative first cost \\
+\midrule
+Incumbent: NiAl bronze casting & Casting $\sim$\$25--40/kg [P] & Pattern/mold + pour [P] & Trim, machine, balance & $\sim$\$2--3k; replacement/refurbish every $\sim$5--8~yr in abrasive-fouled service [P] \\
+LPBF HEA monolith & HEA powder $\sim$\$150--400/kg [P]; 316L powder anchor \$20--40/kg [E] \cite{cost_buyer2025,cost_lpbf2026}; $\sim$6~kg effective at 90\% reuse & $\sim$30~h at \$50--150/h [E] \cite{cost_lpbf2026,printer_guide2026} & HIP, machine, electropolish & $\sim$\$6--7k \\
+WAAM HEA + machining & HEA MPCW wire $\sim$\$40--120/kg [P]; $\sim$12~kg & $\sim$10~h at \$15--40/h [P] & Machining ($\sim$40\% mass removal), surface finish & $\sim$\$2.5--3k \\
+DED HEA cladding on 316L/steel & Substrate casting $\sim$\$800 [P]; overlay powder $\sim$11~kg at \$150--250/kg [P] & $\sim$8~h at \$30--80/h [P] & Machine to profile, local polish & $\sim$\$4--5k \\
+\bottomrule
+\end{tabularx}
+
+\vspace{4pt}
+\footnotesize Life-cycle notes [P]: AM buy-to-fly advantages (near-net deposition vs machining from bar/forging), extended maintenance intervals if HEA pit/cavitation resistance holds in field service (unproven---evidence gate in Fig.~\ref{fig:decision_tree}), and critical-element burden (10--20\% Co in FCC HEAs) must be weighed in the LCA against Cu-based incumbents \cite{nass2025marine}.
+
+\end{table*}
