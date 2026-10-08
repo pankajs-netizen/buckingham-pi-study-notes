@@ -1,0 +1,20 @@
+\section{HEA Fundamentals Relevant to Marine Service}
+\label{sec:fundamentals}
+
+\subsection{Core effects, critically stated}
+
+The original HEA concept invoked four ``core effects'': high configurational entropy stabilizing solid solutions, severe lattice distortion impeding dislocation motion and diffusion, sluggish diffusion retarding phase decomposition, and a cocktail effect in which properties emerge non-linearly from the mixture \cite{yeh2004,murty2019}. A critical reassessment by Miracle and Senkov \cite{miracle2017} retains configurational entropy as a genuine thermodynamic contribution but cautions that it alone does not guarantee single-phase microstructures, that lattice distortion is composition-dependent, and that ``sluggish diffusion'' is neither universal nor necessarily large. For the marine engineer the practical restatement is simple: HEA compositions must be evaluated case by case, and phase stability in the presence of defects, segregation, and service temperature is what matters \cite{george2019}.
+
+\subsection{Phase families and their marine relevance}
+
+\emph{FCC alloys} (prototypically CoCrFeMnNi, the ``Cantor'' alloy \cite{cantor2004}) are ductile at all temperatures, with strength rising as temperature falls \cite{otto2013} and fracture toughness that remains exceptional even at cryogenic temperatures \cite{gludovatz2014}. This combination is attractive for seawater piping, cryogenic cargo systems, and any component where corrosion resistance must coexist with toughness. Their weakness is moderate yield strength, which must be supplied by grain refinement, cold work, or precipitation engineering.
+
+\emph{BCC and refractory HEAs} (e.g., Nb-, Mo-, Ta-, W-rich systems) offer high strength and thermal stability but typically poorer ambient ductility and, depending on composition, weaker passivity; their AM processing is reviewed in \cite{abdullah2024rhea}. For marine use they are best viewed as candidates for hot or wear-dominated niches rather than bulk seawater-wetted structures.
+
+\emph{Eutectic HEAs} (EHEAs), led by AlCoCrFeNi$_{2.1}$ with its lamellar FCC/B2 duplex structure \cite{lu2014ehea}, balance strength and ductility and---importantly for AM---solidify as a coupled eutectic, which reduces hot cracking susceptibility. Recent work shows that the corrosion behavior of this family is exquisitely sensitive to how uniformly the elements partition between the two phases \cite{slm_ehea_2025}, making AM's rapid solidification a genuine processing lever.
+
+\subsection{Passivity and its limits in chloride media}
+
+HEA corrosion resistance is not automatic. The most influential corrosion review of HEAs, by Qiu et~al. \cite{qiu2017}, established that Cr-rich passive films are the basis of good performance, while Al- and Ni-rich BCC/B2 phases in multiphase alloys are preferential pitting sites; later work on Al$_x$CoCrFeNiTi$_y$ quantified how microstructural evolution shifts electrochemical response \cite{qiu2019}. Two directions are directly relevant to seawater service. First, \emph{computational alloy design for passivity}: Lu et~al. \cite{lu2018design} demonstrated a thermodynamics-plus-electrochemistry design loop that produced a corrosion-resistant HEA for harsh environments, and Quiambao et~al. \cite{quiambao2019} characterized its passivation in detail, showing that selective Cr and Fe enrichment of the passive film underlies its resistance. Second, \emph{Mo and W additions} strengthen passive films in chloride solutions in much the same way Mo does in stainless steels, a strategy recently exploited in EHEAs (Section~\ref{sec:corrosion}).
+
+Two marine-specific caveats follow. Passive-film stability is \emph{environment-specific}: an alloy that passivates in dilute or neutral chloride can behave very differently in acidic, sulfide-bearing, or creviced conditions typical of stagnant seawater or under-biofilm niches. And the ``cocktail effect'' works both ways: beneficial synergies are documented, but adverse ones---e.g., micro-galvanic coupling between constituent phases---are equally possible \cite{qiu2017,nass2025marine}.
