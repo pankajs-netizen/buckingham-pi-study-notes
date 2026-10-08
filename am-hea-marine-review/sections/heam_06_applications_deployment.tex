@@ -1,0 +1,32 @@
+\section{Marine Applications and Deployment Pathways}
+\label{sec:applications}
+
+\subsection{Where AM HEAs fit in the marine system}
+
+The argument for AM HEAs is strongest where corrosion cost, geometric complexity, or repair difficulty are simultaneously high, so that the material premium is amortized. Table~\ref{tab:applications} maps candidate applications; the main clusters are:
+
+\emph{Seawater systems and pumps.} Impellers, valve trim, strainers, and fittings in ballast, cooling, and fire-main systems are small, complex, and corrosion-critical---an ideal LPBF niche, echoing LPBF's established role in complex high-performance components \cite{cagirici2024}. FCC CoCrFeMnNi-type alloys and Mo-modified EHEAs are the leading composition candidates given their chloride performance \cite{lpbf_cantor_2024,mo_ehea_2026}.
+
+\emph{Heat exchangers and desalination hardware.} LPBF's ability to print conformal internal channels enables compact seawater heat exchangers; the same geometrical freedom applies to energy-recovery and reverse-osmosis components, where pitting and crevice resistance govern life \cite{cagirici2024,nass2025marine}.
+
+\emph{Large structures and propulsion.} WAAM suits propeller blanks, brackets, offshore nodal repairs, and other meter-scale items where powder-bed volumes are impractical \cite{raultaiwade2021}; the economics depend on HEA wire becoming available at scale \cite{andersson2026waam}.
+
+\emph{Repair and cladding.} DED overlays of HEA on marine steel, or on worn bronze and steel components (shafts, seal seats, rudder stocks), deliver corrosion- and wear-resistant surfaces only where needed \cite{jiang2019clad}. This is arguably the fastest route to impact because it sidesteps whole-part cost and leverages existing shipyard welding infrastructure.
+
+\subsection{Hybrid and functionally graded strategies}
+
+Because feedstock cost dominates, the near-term deployment model is hybrid: conventional marine steel for structure, AM HEA where the seawater actually acts. Compositionally graded DED builds---steel to HEA transition---can manage both cost and galvanic compatibility, provided dilution and intermetallic formation at the interface are controlled \cite{cagirici2024}. Cathodic protection compatibility must be checked case by case, since passive HEAs shift the galvanic balance of a protected assembly \cite{nass2025marine}.
+
+\subsection{Qualification: what classification societies need}
+
+Marine deployment requires classification-society acceptance. DNV's standard for additive manufacturing of metallic parts (DNV-ST-B203 \cite{dnvstb203}), ABS's metal AM guidelines \cite{abs_mam}, and Lloyd's Register's AM requirements \cite{lr_am} currently provide frameworks developed around conventional engineering alloys; HEA compositions sit outside the qualified material list and would need to be qualified as new materials, with mechanical \emph{and} corrosion datasets. A defensible qualification ladder for an AM HEA marine component is:
+
+\begin{enumerate}
+\item \emph{Material baseline:} composition control, powder/wire certification, defect acceptance criteria (porosity, cracks, inclusions) with NDT.
+\item \emph{Electrochemical screening:} polarization and EIS in ASTM D1141 seawater \cite{astm_d1141} under ASTM G3/G5/G61 conventions \cite{astm_g3,astm_g5,astm_g61}, benchmarked against the incumbent alloy (e.g., 316L, NiAl bronze) in identical conditions.
+\item \emph{Long-term exposure:} immersion and wet--dry cycling in natural or artificial seawater for months, with post-exposure mechanical re-testing, mirroring exposure protocols already used for conventional AM alloys \cite{am_alsi10mg_2026}.
+\item \emph{Coupled degradation:} corrosion fatigue and SCC (e.g., slow-strain or U-bend tests in seawater), erosion-corrosion and cavitation for rotating parts \cite{lpbf_316l_scc2022,nass2025marine}.
+\item \emph{System level:} galvanic compatibility tests in the actual assembly, CP compatibility, and pilot installation with inspection intervals.
+\end{enumerate}
+
+Table~\ref{tab:standards} maps the applicable standards onto this ladder. The gap worth emphasizing: no existing marine AM standard references HEA compositions, and no HEA standard references marine exposure classes---closing that two-way gap is the qualification task.

@@ -1,0 +1,42 @@
+\documentclass[journal,10pt,twocolumn]{IEEEtran}
+
+% Core packages
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+
+\begin{document}
+
+\title{Additive Manufacturing of High-Entropy Alloys for Marine Applications: Processing, Corrosion Performance, and Pathways to Qualification}
+
+\author{Anirban Chakraborty, Pankaj Sharma$^*$, and Chinmoy Sarkar\\
+Indian Maritime University\\
+\thanks{$^*$Corresponding author. Email: \texttt{pankajs@imu.ac.in}}}
+
+\maketitle
+
+% Include all modular sections
+\input{sections/heam_00_abstract.tex}
+\input{sections/heam_01_intro_scope.tex}
+\input{sections/heam_02_fundamentals.tex}
+\input{sections/heam_03_am_processes.tex}
+\input{sections/heam_04_microstructure_mechanical.tex}
+\input{sections/heam_05_corrosion_seawater.tex}
+\input{sections/heam_06_applications_deployment.tex}
+\input{sections/heam_07_challenges_outlook.tex}
+\input{sections/heam_08_conclusion.tex}
+\input{sections/heam_09_tables_figures.tex}
+
+% Bibliography
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
