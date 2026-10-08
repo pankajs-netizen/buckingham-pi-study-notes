@@ -1,0 +1,55 @@
+name: Build manuscript PDFs
+
+on:
+  push:
+    paths-ignore:
+      # Avoid re-triggering when the bot commits compiled PDFs
+      - '**/main.pdf'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-publishers texlive-fonts-recommended latexmk
+
+      - name: Build am-hea-marine-review PDF
+        working-directory: am-hea-marine-review
+        run: latexmk -pdf -interaction=nonstopmode main.tex || { tail -80 main.log; exit 1; }
+
+      - name: Build am-marine-review PDF
+        working-directory: am-marine-review
+        run: latexmk -pdf -interaction=nonstopmode main.tex || { tail -80 main.log; exit 1; }
+
+      - name: Commit PDFs back to the branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add am-hea-marine-review/main.pdf am-marine-review/main.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Add compiled manuscript PDFs [skip actions]"
+            git push
+          else
+            echo "PDFs unchanged, nothing to commit."
+          fi
+
+      - name: Upload PDF artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-pdfs
+          path: |
+            am-hea-marine-review/main.pdf
+            am-marine-review/main.pdf
