@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\caption{Quantitative electrochemical synthesis for the main AM-HEA families in chloride media, with 316L benchmarks. Potentials are quoted as published (reference electrodes differ between studies: SCE or Ag/AgCl; absolute values shift by tens of mV under conversion). ``AB'' = as-built. Ranges across studies are the honest summary statistic; see Section~\ref{sec:a1}.}
+\label{tab:electrochem}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}llllllX@{}}
+\toprule
+System & Route / state & Medium & $E_{\mathrm{corr}}$ & $i_{\mathrm{corr}}$ ($\mu$A/cm$^2$) & $E_{\mathrm{pit}}$ / key metric & Source \\
+\midrule
+CoCrFeMnNi & SLM, AB & 3.5\% NaCl & $-189$ mV & 0.09 & $+197$ mV; passivity window 386 mV & \cite{met2019slmcorr} \\
+CoCrFeMnNi (cast ref.) & Cast & 3.5\% NaCl & $-179$ mV & 0.11 & $+37$ mV; window 216 mV; 0.91 $\mu$m/yr & \cite{met2019slmcorr} \\
+CoCrFeMnNi & SLM, XY / XZ & 3.5\% NaCl & $-0.346$ / $-0.323$ V vs SCE & 0.123 / 0.133 & Cast best: $-0.264$ V, 0.120; defect-dominated build & \cite{frontiers2020slmcast} \\
+CoCrFeMnNi & LPBF, AB + HIP & 3.5\% NaCl & --- & --- & $\sim$2.2$\times$ better than 316L; $\sim$15.5$\times$ worse in 1N H$_2$SO$_4$; H permeation $\sim$5$\times$ below 316L & \cite{lpbf_cantor_2024} \\
+CoCrFeMnNi (friction-surfaced) & Solid-state deposit & 3.5\% NaCl & --- & 0.11 (cast: 0.55) & $+125.7$ mV (cast: $-120.3$); $R_{\mathrm{ct}}\ 7.1\times10^{5}\ \Omega\cdot$cm$^2$ & \cite{fs_coating2026} \\
+CoCrNi & LAAM & 3.5\% NaCl & --- & lower with more oxides & No pitting in test window; superior to 316L & \cite{laam_cocrni2021} \\
+AlCoCrFeNi$_{2.1}$ & SLM, AB & 3.5\% NaCl & --- & --- & Best of as-built/annealed/cast; annealing degrades & \cite{slm_ehea_2025} \\
+AlCoCrFeNi$_{2.1}$ & Cast & 3.5\% NaCl (+NaHSO$_3$) & --- & --- & Passivates 5--45~$^{\circ}$C; \emph{no} passivation with bisulfite; pits at Al--Ni-rich B2 & \cite{jac_ehea2023} \\
+AlCoCrFeNi$_{2.1}$Mo$_{0.3}$ & Cast (AM design target) & 3.5\% NaCl & --- & low passive current & $E_{\mathrm{pit}} +282$ mV; Mo/Cr composite oxide film & \cite{mo_ehea_2026} \\
+316L (AM benchmark) & SLM & 1 M NaCl & --- & --- & CPT $27.5$--$31$~$^{\circ}$C vs $16$~$^{\circ}$C wrought; $E_{\mathrm{pit}} \approx +330$ mV vs wrought at 25~$^{\circ}$C & \cite{slm316l_cpt} \\
+\bottomrule
+\end{tabularx}
+\end{table*}

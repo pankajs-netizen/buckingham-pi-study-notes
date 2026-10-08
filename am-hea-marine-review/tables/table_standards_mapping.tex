@@ -1,15 +1,26 @@
 \begin{table*}[t]
 \centering
-\caption{Standards and rules framework relevant to qualifying AM HEA components for marine service.}
+\caption{Expanded standards and rules framework for qualifying AM HEA components for marine service, covering electrochemical screening, pitting/crevice, stress corrosion cracking, galvanic coupling, and field exposure (Section~\ref{sec:a10}).}
 \label{tab:standards}
 \footnotesize
 \begin{tabularx}{\textwidth}{@{}lXX@{}}
 \toprule
 Document & Scope & Role in AM-HEA marine qualification \\
 \midrule
-ASTM D1141 \cite{astm_d1141} & Preparation of substitute ocean water & Standard medium for reproducible seawater corrosion tests \\
-ASTM G3, G5, G61 \cite{astm_g3,astm_g5,astm_g61} & Electrochemical measurement conventions, potentiodynamic polarization, cyclic polarization & Screening and ranking of passive-film quality and pitting susceptibility \\
-DNV-ST-B203 \cite{dnvstb203} & Additive manufacturing of metallic parts (marine) & Qualification framework to extend toward HEA compositions and defect-acceptance criteria \\
+ASTM D1141 \cite{astm_d1141} & Substitute ocean water preparation & Standard medium for reproducible seawater tests \\
+ASTM G1, G31 \cite{astm_g1,astm_g31} & Specimen preparation/cleaning; immersion testing & Baseline mass-loss program and retrieval evaluation \\
+ASTM G3, G5, G61 \cite{astm_g3,astm_g5,astm_g61} & Electrochemical conventions; anodic and cyclic polarization & Screening of passivity, pitting and repassivation \\
+ASTM G48 Methods A--F \cite{astm_g48} & Ferric chloride pitting (A) and crevice (B) tests; critical pitting/crevice temperature for Ni alloys (C/D) and stainless steels (E/F) & Accelerated ranking; CPT/CCT as single-number acceptance metrics \\
+ASTM G78 \cite{astm_g78} & Crevice corrosion testing of stainless steels in marine applications (washer-type assemblies) & Crevice assemblies for laboratory and seawater racks \\
+ASTM G192 \cite{astm_g192} & Crevice repassivation potential (potentiodynamic--galvanostatic--potentiostatic) & Most discriminating single metric for crevice susceptibility \\
+ASTM G46 \cite{astm_g46} & Examination and rating of pitting & Pit-density and pit-depth statistics after exposure \\
+ASTM G30, G38/G39 \cite{astm_g30,astm_g38,astm_g39} & U-bend and C-ring stress-corrosion specimens & SCC screening under residual/applied stress in seawater \\
+ASTM G129 (and G123) \cite{astm_g129,astm_g123} & Slow strain rate testing for environmentally assisted cracking (boiling acidified NaCl for stainless alloys) & Quantitative SCC susceptibility under load in chloride media \\
+ASTM G71 \cite{astm_g71} & Galvanic corrosion testing in electrolytes & HEA--steel and HEA--bronze couples; CP compatibility screening \\
+ASTM G52 \cite{astm_g52} & Exposure of metals in surface seawater (immersion, tidal, splash, spray; crevices per G78; controls per D3623) & Governing practice for the natural-exposure matrix (Table~\ref{tab:exposure}) \\
+ASTM G16 \cite{astm_g16} & Statistics applied to corrosion data & Required statistical treatment of pit and exposure data \\
+DNV-ST-B203 \cite{dnvstb203} & Additive manufacturing of metallic parts (marine) & Qualification framework to extend toward HEA compositions and defect acceptance \\
+DNV-RP-B401 \cite{dnv_rpb401} & Cathodic protection design & CP set points against which HEA compatibility is judged (Section~\ref{sec:a4}) \\
 ABS metal AM guidelines \cite{abs_mam} & Class approval of AM metal parts & Parallel route for machinery and hull components \\
 Lloyd's Register AM requirements \cite{lr_am} & Class approval of AM processes and parts & Parallel route; data-driven qualification expectations \\
 \bottomrule

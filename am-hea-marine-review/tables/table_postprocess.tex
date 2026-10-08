@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Post-processing balance for EHEA and FCC-HEA marine parts: defect mitigation versus segregation/passivity trade-offs.}
+\label{tab:postprocess}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}
+\toprule
+Treatment & Effect on defects/segregation & Measured effect on corrosion & Recommendation for marine EHEA/FCC parts \\
+\midrule
+HIP & Closes internal porosity; near-isothermal, does not deliberately drive segregation & HIPed LPBF CoCrFeMnNi keeps AB-level chloride performance; hardness $229\!\to\!152$ HV \cite{lpbf_cantor_2024} & Use when porosity is the concern; safest densification \\
+Homogenization anneal & Relieves stress but restores FCC/B2 segregation in EHEAs & SLM AlCoCrFeNi$_{2.1}$: as-built best; annealing dramatically degrades chloride passivity \cite{slm_ehea_2025} & Avoid for passivity-critical parts; if required, re-qualify electrochemically \\
+CW laser polishing & Localized remelting; Sa 2.1$\to$0.3~$\mu$m ($-85$\%), grain refinement $-34$\% & $i_{\mathrm{corr}}$ $-97$\%; passive window $+98$\% (LPBF 316L) \cite{laserpolish2026}; NS polishing risks microcracks, FS limited benefit \cite{laserpolish2023} & Preferred for accessible wetted faces of LPBF parts \\
+Electropolishing & Removes surface peaks/reaction layer; reaches internal channels & Cr/Fe of passive film $\sim$3$\times$; $i_{\mathrm{corr}}$ 2.5$\to$0.8~$\mu$A/cm$^2$ (316L) \cite{ep2014} & Preferred for conformal/internal seawater channels \\
+\bottomrule
+\end{tabularx}
+
+\vspace{4pt}
+\footnotesize Recommended sequence: HIP $\rightarrow$ machining $\rightarrow$ electropolish or CW laser polish of wetted surfaces $\rightarrow$ low-temperature stress relief only if needed (with corrosion re-qualification).
+
+\end{table*}
